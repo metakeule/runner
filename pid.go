@@ -50,6 +50,7 @@ func handleInterrupt(fn func()) {
 		gobin = strings.TrimRight(string(out), "\n")
 	} else {
 		log.Println("can't find go executable, won't be able to sighup")
+		return
 	}
 
 	c := make(chan os.Signal, 1)
